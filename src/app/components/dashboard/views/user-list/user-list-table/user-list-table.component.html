@@ -1,0 +1,174 @@
+<p-table
+  #dt2
+  [value]="customers"
+  dataKey="id"
+  [rows]="10"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [loading]="loading"
+  [paginator]="true"
+  [globalFilterFields]="[
+    'name',
+    'country.name',
+    'representative.name',
+    'status'
+  ]"
+  [tableStyle]="{ 'min-width': '75rem' }"
+>
+  <ng-template pTemplate="caption">
+    <div class="flex">
+      <p-iconField iconPosition="left" class="ml-auto">
+        <p-inputIcon>
+          <i class="pi pi-search"></i>
+        </p-inputIcon>
+        <input
+          pInputText
+          type="text"
+          (input)="onInputChange($event)"
+          placeholder="Recherhcer un mot clé"
+        />
+      </p-iconField>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 22%">Nom du patient</th>
+      <th style="width: 22%">Nationalité</th>
+      <th style="width: 22%">Identifiant</th>
+      <th style="width: 13%">Status</th>
+      <th style="width: 1%">Vérifié</th>
+      <th style="width: 20%">Actions</th> <!-- New column for actions -->
+    </tr>
+    <tr>
+      <th>
+        <p-columnFilter
+          type="text"
+          field="name"
+          placeholder="Rechercher par nom"
+          ariaLabel="Filter Name"
+        />
+      </th>
+      <th>
+        <p-columnFilter
+          type="text"
+          field="country.name"
+          placeholder="Rechercher par pays"
+          ariaLabel="Filter Country"
+        />
+      </th>
+      <th>
+        <p-columnFilter
+          field="representative"
+          matchMode="in"
+          [showMenu]="false"
+        >
+          <ng-template
+            pTemplate="filter"
+            let-selectedRepresentative
+            let-filter="filterCallback"
+          >
+            <p-multiSelect
+              [(ngModel)]="value"
+              [options]="representatives"
+              placeholder="Sélectionner un identifiant"
+              (onChange)="filter($event.value)"
+              optionLabel="name"
+            >
+              <ng-template let-option pTemplate="item">
+                <div class="inline-block vertical-align-middle">
+                  <img
+                    [alt]="option.label"
+                    src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{
+                      option.image
+                    }}"
+                    width="24"
+                    class="vertical-align-middle"
+                  />
+                  <span class="ml-1 mt-1">
+                    {{ option.name }}
+                  </span>
+                </div>
+              </ng-template>
+            </p-multiSelect>
+          </ng-template>
+        </p-columnFilter>
+      </th>
+      <th>
+        <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+          <ng-template
+            pTemplate="filter"
+            let-selectedRepresentative
+            let-filter="filterCallback"
+          >
+            <p-dropdown
+              [(ngModel)]="value"
+              [options]="statuses"
+              (onChange)="filter($event.value)"
+              placeholder="Sélectionner un"
+              [showClear]="true"
+            >
+              <ng-template let-option pTemplate="item">
+                <p-tag
+                  [value]="option.value"
+                  [severity]="getSeverity(option.label)"
+                />
+              </ng-template>
+            </p-dropdown>
+          </ng-template>
+        </p-columnFilter>
+      </th>
+      <th>
+        <p-columnFilter type="boolean" field="verified" />
+      </th>
+      <th></th> <!-- Empty column for actions header -->
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-customer>
+    <tr>
+      <td>{{ customer.name }}</td>
+      <td>
+        <img
+          src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+          [class]="'flag flag-' + customer.country.code"
+          style="width: 20px"
+        />
+        <span class="ml-1 vertical-align-middle">{{ customer.country.name }}</span>
+      </td>
+      <td>
+        <img
+          [alt]="customer.representative.name"
+          src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{
+            customer.representative.image
+          }}"
+          width="32"
+          style="vertical-align: middle"
+        />
+        <span class="ml-1 vertical-align-middle">{{ customer.representative.name }}</span>
+      </td>
+      <td>
+        <p-tag [value]="customer.status" [severity]="getSeverity(customer.status)" />
+      </td>
+      <td>
+        <i
+          class="pi"
+          [ngClass]="{
+            'text-green-500 pi-check-circle': customer.verified,
+            'text-red-500 pi-times-circle': !customer.verified
+          }"
+        ></i>
+      </td>
+      <td>
+        <div>
+         
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="6">No customers found.</td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-button label="Contacter" [raised]="true" severity="success" />
+<p-button label="Detail" [raised]="true" severity="contrast" />
+<p-button label="Supprimer" [raised]="true" severity="danger"/>

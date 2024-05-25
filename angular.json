@@ -1,0 +1,129 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "gestionHopital": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/gestion-hopital",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+            "src/styles.css",
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "src/assets/skydash/css/vertical-layout-light/style.css",
+             "src/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
+             "src/assets/skydash/vendors/ti-icons/css/themify-icons.css",
+             "src/assets/skydash/js/select.dataTables.min.css",
+             "src/assets/skydash/vendors/feather/feather.css",
+             "src/assets/skydash/vendors/ti-icons/css/themify-icons.css",
+             "src/assets/skydash/vendors/css/vendor.bundle.base.css",
+             "src/assets/skydash/vendors/mdi/css/materialdesignicons.min.css",
+             "src/assets/Login_v4/vendor/css-hamburgers/hamburgers.min.css",
+             "src/assets/Login_v4/vendor/animsition/css/animsition.min.css",
+            "src/assets/Login_v4/vendor/select2/select2.min.css"
+            ],
+            "scripts": 
+            ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+            "src/assets/Login_v4/vendor/jquery/jquery-3.2.1.min.js",
+            "src/assets/Login_v4/vendor/jquery/jquery-3.2.1.min.js",
+            "src/assets/Login_v4/vendor/animsition/js/animsition.min.js",
+            "src/assets/Login_v4/vendor/bootstrap/js/popper.js",
+            "src/assets/Login_v4/vendor/bootstrap/js/bootstrap.min.js",
+            "src/assets/Login_v4/vendor/select2/select2.min.js",
+            "src/assets/Login_v4/vendor/daterangepicker/moment.min.js",
+            "src/assets/Login_v4/vendor/daterangepicker/daterangepicker.js",
+            "src/assets/Login_v4/vendor/countdowntime/countdowntime.js",
+            "src/assets/Login_v4/js/main.js"
+
+
+          ],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "gestionHopital:build:production"
+            },
+            "development": {
+              "buildTarget": "gestionHopital:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "gestionHopital:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

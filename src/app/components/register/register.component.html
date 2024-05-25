@@ -1,0 +1,85 @@
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('../../assets/Login_v4/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form (ngSubmit)="register()" class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						S'INSCRIRE
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="mail" placeholder="Saisir votre mail" [(ngModel)]="this.user.usermail">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Saisir mot de passe"  [(ngModel)]="this.user.password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					<div class="text-right p-t-8 p-b-31">
+						<a href="#">
+							mot de passe oublié
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button type="submit" class="login100-form-btn">
+								Enregistrer
+							</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-20 p-b-10">
+						<span>
+							Ou s'inscrire avec
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
+                    <div class="flex-col-c p-t-20">
+						<a [routerLink]="['/login']" class="txt2">
+							Se connecter
+						</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../assets/Login_v4/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../../assets/Login_v4/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../../assets/Login_v4/js/main.js"></script>
+
