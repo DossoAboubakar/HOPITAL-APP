@@ -26,31 +26,13 @@
             ],
             "styles": [
             "src/styles.css",
-            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-            "src/assets/skydash/css/vertical-layout-light/style.css",
-             "src/assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
-             "src/assets/skydash/vendors/ti-icons/css/themify-icons.css",
-             "src/assets/skydash/js/select.dataTables.min.css",
-             "src/assets/skydash/vendors/feather/feather.css",
-             "src/assets/skydash/vendors/ti-icons/css/themify-icons.css",
-             "src/assets/skydash/vendors/css/vendor.bundle.base.css",
-             "src/assets/skydash/vendors/mdi/css/materialdesignicons.min.css",
-             "src/assets/Login_v4/vendor/css-hamburgers/hamburgers.min.css",
-             "src/assets/Login_v4/vendor/animsition/css/animsition.min.css",
-            "src/assets/Login_v4/vendor/select2/select2.min.css"
+            "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+            "node_modules/primeng/resources/primeng.min.css",
+            "src/assets/skydash/vendors/mdi/css/materialdesignicons.min.css"
             ],
             "scripts": 
             ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-            "src/assets/Login_v4/vendor/jquery/jquery-3.2.1.min.js",
-            "src/assets/Login_v4/vendor/jquery/jquery-3.2.1.min.js",
-            "src/assets/Login_v4/vendor/animsition/js/animsition.min.js",
-            "src/assets/Login_v4/vendor/bootstrap/js/popper.js",
-            "src/assets/Login_v4/vendor/bootstrap/js/bootstrap.min.js",
-            "src/assets/Login_v4/vendor/select2/select2.min.js",
-            "src/assets/Login_v4/vendor/daterangepicker/moment.min.js",
-            "src/assets/Login_v4/vendor/daterangepicker/daterangepicker.js",
-            "src/assets/Login_v4/vendor/countdowntime/countdowntime.js",
-            "src/assets/Login_v4/js/main.js"
+            "src/assets/skydash/vendors/js/vendor.bundle.base.js"
 
 
           ],

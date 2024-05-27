@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserListTableComponent } from './user-list-table/user-list-table.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [RouterModule,UserListTableComponent],
+  imports: [RouterModule,UserListTableComponent,ButtonModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })

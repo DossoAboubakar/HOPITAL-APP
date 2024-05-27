@@ -5,6 +5,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee,faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

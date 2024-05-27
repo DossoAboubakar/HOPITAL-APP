@@ -31,10 +31,10 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th style="width: 22%">Nom du patient</th>
-      <th style="width: 22%">Nationalité</th>
+      <th style="width: 27%">Nom du patient</th>
+      <th style="width: 27%">Nationalité</th>
       <th style="width: 22%">Identifiant</th>
-      <th style="width: 13%">Status</th>
+      <th style="width: 3%">Status</th>
       <th style="width: 1%">Vérifié</th>
       <th style="width: 20%">Actions</th> <!-- New column for actions -->
     </tr>
@@ -157,9 +157,12 @@
         ></i>
       </td>
       <td>
-        <div>
-         
+        <div style="display: flex; gap:0.5rem">
+          <p-button icon="mdi mdi-phone-in-talk" [raised]="true" severity="success" class="p-mr-2" size="small" title="Contacter"></p-button>
+          <p-button icon="mdi mdi-dots-horizontal" [raised]="true" severity="secondary" class="p-mr-2"  size="small" title="Détail"></p-button>
+          <p-button icon="mdi mdi-delete" [raised]="true" severity="danger"  size="small" title="Supprimer" ></p-button>
         </div>
+         
       </td>
     </tr>
   </ng-template>
@@ -169,6 +172,4 @@
     </tr>
   </ng-template>
 </p-table>
-<p-button label="Contacter" [raised]="true" severity="success" />
-<p-button label="Detail" [raised]="true" severity="contrast" />
-<p-button label="Supprimer" [raised]="true" severity="danger"/>
+

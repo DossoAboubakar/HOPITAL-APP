@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -7,17 +7,21 @@ import { AuthService } from '../../services/auth.service';
   selector: 'app-register',
   standalone: true,
   imports: [RouterModule,FormsModule],
-  templateUrl: './register.component.html',
-  styleUrl: './Login_v4/css/main.css'
+  templateUrl: '../../../assets/Login_v4/register.html',
+  styleUrls: []
 })
 export class RegisterComponent {
-  constructor (private authserivce:AuthService){}
+  @ViewChild('registerButton', { static: true }) registerButton: ElementRef | undefined;
+  constructor (private authservice:AuthService){}
+  ngAfterViewInit(): void {
+    this.registerButton?.nativeElement.addEventListener('click', this.register.bind(this));
+  }
   user = {
     usermail:'',
     password:''
   }
 register() {
-  this.authserivce.register(this.user.usermail,this.user.password)
+  this.authservice.register(this.user.usermail,this.user.password)
 }
 
 }

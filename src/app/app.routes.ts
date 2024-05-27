@@ -18,15 +18,13 @@ import { DirectoryTemplateComponent } from './components/dashboard/views/directo
 export const routes: Routes = [
 {
         path : '',
-        component: DashboardComponent,
-        //pathMatch :'full'
-        
+        component: HomePageComponent,
+        //pathMatch :'full'    
 },
 
 {
     path: 'login',
     component:ConnexionFormComponent
-
 },
 {
     path:'register',
@@ -42,36 +40,36 @@ export const routes: Routes = [
     component:DashboardComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'userList',
+{  path:'userList',
     component:UserListComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'consultation',
+{  path:'consultation',
     component:ConsultationComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'create/directory',
+{  path:'create/directory',
     component:DirectoryComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'exams/manager',
+{  path:'exams/manager',
     component:ExamManagerComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'fees',
+{  path:'fees',
     component:FeesComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'prescription',
+{  path:'prescription',
     component:PrescriptionComponent,
     //canActivate : [routesGuardGuard]
 },
-{path:'table',
+{  path:'table',
     component:UserListTableComponent,
     //canActivate : [routesGuardGuard]
 },
 
-{path:'directory',
+{  path:'directory',
     component:DirectoryTemplateComponent,
     //canActivate : [routesGuardGuard]
 },

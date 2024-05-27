@@ -26,13 +26,13 @@ export class AuthService {
       this.auth.signInWithEmailAndPassword(email, password)
          .then(() => {
           console.log('auhtentification succes')
-           this.router.navigate(['home']);
+           this.router.navigate(['/dashboard']);
            this.userIsLogged = true
          })
          .catch(() => {
           console.log('auhtentification failed')
            alert('veuillez verifier vos coordonnées');
-           this.router.navigate(['login']);
+           this.router.navigate(['/login']);
          })
   }
   

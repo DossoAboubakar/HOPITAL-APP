@@ -3,11 +3,11 @@ export interface Patient {
     prenom: string;
     localisation: string;
     genre: string;
-    dateDeNaissance: string;
-    lieuDeNaissance: string;
+    date_naissance: string;
+    lieu_naissance: string;
     profession: string;
     contact: string;
     email: string;
-    groupeSanguin: string;
+    groupe_sanguin: string;
     antecedents: string;
   }
