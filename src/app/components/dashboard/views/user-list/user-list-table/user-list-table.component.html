@@ -36,7 +36,8 @@
       <th style="width: 22%">Identifiant</th>
       <th style="width: 3%">Status</th>
       <th style="width: 1%">Vérifié</th>
-      <th style="width: 20%">Actions</th> <!-- New column for actions -->
+      <th style="width: 20%">Actions</th>
+      <!-- New column for actions -->
     </tr>
     <tr>
       <th>
@@ -119,7 +120,8 @@
       <th>
         <p-columnFilter type="boolean" field="verified" />
       </th>
-      <th></th> <!-- Empty column for actions header -->
+      <th></th>
+      <!-- Empty column for actions header -->
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-customer>
@@ -131,7 +133,9 @@
           [class]="'flag flag-' + customer.country.code"
           style="width: 20px"
         />
-        <span class="ml-1 vertical-align-middle">{{ customer.country.name }}</span>
+        <span class="ml-1 vertical-align-middle">{{
+          customer.country.name
+        }}</span>
       </td>
       <td>
         <img
@@ -142,10 +146,15 @@
           width="32"
           style="vertical-align: middle"
         />
-        <span class="ml-1 vertical-align-middle">{{ customer.representative.name }}</span>
+        <span class="ml-1 vertical-align-middle">{{
+          customer.representative.name
+        }}</span>
       </td>
       <td>
-        <p-tag [value]="customer.status" [severity]="getSeverity(customer.status)" />
+        <p-tag
+          [value]="customer.status"
+          [severity]="getSeverity(customer.status)"
+        />
       </td>
       <td>
         <i
@@ -157,12 +166,31 @@
         ></i>
       </td>
       <td>
-        <div style="display: flex; gap:0.5rem">
-          <p-button icon="mdi mdi-phone-in-talk" [raised]="true" severity="success" class="p-mr-2" size="small" title="Contacter"></p-button>
-          <p-button icon="mdi mdi-dots-horizontal" [raised]="true" severity="secondary" class="p-mr-2"  size="small" title="Détail"></p-button>
-          <p-button icon="mdi mdi-delete" [raised]="true" severity="danger"  size="small" title="Supprimer" ></p-button>
+        <div style="display: flex; gap: 0.5rem">
+          <p-button
+            icon="mdi mdi-phone-in-talk"
+            [raised]="true"
+            severity="success"
+            class="p-mr-2"
+            size="small"
+            title="Contacter"
+          ></p-button>
+          <p-button
+            icon="mdi mdi-dots-horizontal"
+            [raised]="true"
+            severity="secondary"
+            class="p-mr-2"
+            size="small"
+            title="Détail"
+          ></p-button>
+          <p-button
+            icon="mdi mdi-delete"
+            [raised]="true"
+            severity="danger"
+            size="small"
+            title="Supprimer"
+          ></p-button>
         </div>
-         
       </td>
     </tr>
   </ng-template>
@@ -172,4 +200,3 @@
     </tr>
   </ng-template>
 </p-table>
-

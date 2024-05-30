@@ -6,10 +6,8 @@ import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [RouterModule,UserListTableComponent,ButtonModule],
+  imports: [RouterModule, UserListTableComponent, ButtonModule],
   templateUrl: './user-list.component.html',
-  styleUrl: './user-list.component.css'
+  styleUrl: './user-list.component.css',
 })
-export class UserListComponent {
-
-}
+export class UserListComponent {}

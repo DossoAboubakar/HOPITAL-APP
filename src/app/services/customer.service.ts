@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Customer } from '../interface/cutomer.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CustomerService {
+  constructor() {}
 
-  constructor() { }
   getCustomersLarge(): Promise<Customer[]> {
     return new Promise((resolve, reject) => {
       const data: Customer[] = [
@@ -15,7 +15,7 @@ export class CustomerService {
           name: 'Kone Emmanuel',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Benton, John B Jr',
           status: 'En examen',
@@ -23,16 +23,16 @@ export class CustomerService {
           activity: 17,
           representative: {
             name: 'Kone Emmanuel',
-            image: 'amyelsner.png'
+            image: 'amyelsner.png',
           },
-          balance: 70663
+          balance: 70663,
         },
         {
           id: 1001,
           name: 'Dosso Aboubakar',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Chanay, Jeffrey A Esq',
           status: 'Traitement termniné',
@@ -40,16 +40,16 @@ export class CustomerService {
           activity: 0,
           representative: {
             name: 'Dosso Aboubakar',
-            image: 'annafali.png'
+            image: 'annafali.png',
           },
-          balance: 82429
+          balance: 82429,
         },
         {
           id: 1002,
           name: 'Diarrassouba Ibrahim',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Chemel, James L Cpa',
           status: 'En consultation',
@@ -57,16 +57,16 @@ export class CustomerService {
           activity: 63,
           representative: {
             name: 'Diarrassouba Ibrahim',
-            image: 'asiyajavayant.png'
+            image: 'asiyajavayant.png',
           },
-          balance: 28334
+          balance: 28334,
         },
         {
           id: 1003,
           name: 'Diarra Yaya',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Feltz Printing Service',
           status: 'En consultation',
@@ -74,16 +74,16 @@ export class CustomerService {
           activity: 37,
           representative: {
             name: 'Diarra Yaya',
-            image: 'bernardodominic.png'
+            image: 'bernardodominic.png',
           },
-          balance: 88521
+          balance: 88521,
         },
         {
           id: 1004,
           name: 'Kone Tokafolo',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Printing Dimensions',
           status: 'Traitement termniné',
@@ -91,16 +91,16 @@ export class CustomerService {
           activity: 33,
           representative: {
             name: 'Kone Tokafolo',
-            image: 'elwinsharvill.png'
+            image: 'elwinsharvill.png',
           },
-          balance: 93905
+          balance: 93905,
         },
         {
           id: 1005,
           name: 'Rakistaba Adama',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Kenya Printing Ltd',
           status: 'Innactif',
@@ -108,16 +108,16 @@ export class CustomerService {
           activity: 50,
           representative: {
             name: 'Rakistaba Adama',
-            image: 'ionibowcher.png'
+            image: 'ionibowcher.png',
           },
-          balance: 65000
+          balance: 65000,
         },
         {
           id: 1006,
           name: 'Kobena Bio Paul',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Nigeria Publishing Co',
           status: 'Innactif',
@@ -125,16 +125,16 @@ export class CustomerService {
           activity: 20,
           representative: {
             name: 'Kobena Bio Paul',
-            image: 'ivanmagalhaes.png'
+            image: 'ivanmagalhaes.png',
           },
-          balance: 80000
+          balance: 80000,
         },
         {
           id: 1007,
           name: 'Coulibaly Romaric',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Ghana Printers',
           status: 'Dossier en cours...',
@@ -142,16 +142,16 @@ export class CustomerService {
           activity: 45,
           representative: {
             name: 'Coulibaly Romaric',
-            image: 'onyamalimba.png'
+            image: 'onyamalimba.png',
           },
-          balance: 70000
+          balance: 70000,
         },
         {
           id: 1008,
           name: 'Tape Nancy',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Ivory Coast Paper Co',
           status: 'En attente',
@@ -159,16 +159,16 @@ export class CustomerService {
           activity: 30,
           representative: {
             name: 'Tape Nancy',
-            image: 'stephenshaw.png'
+            image: 'stephenshaw.png',
           },
-          balance: 72000
+          balance: 72000,
         },
         {
           id: 1009,
           name: 'Ncho Bony',
           country: {
             name: 'Ivoirienne',
-            code: 'ci'
+            code: 'ci',
           },
           company: 'Senegal Printing Services',
           status: 'Innactif',
@@ -176,17 +176,13 @@ export class CustomerService {
           activity: 40,
           representative: {
             name: 'Ncho Bony',
-            image: 'xuxuefeng.png'
+            image: 'xuxuefeng.png',
           },
-          balance: 68000
-        }
+          balance: 68000,
+        },
       ];
-      
-      
 
       resolve(data);
     });
   }
 }
-  
-  

@@ -16,69 +16,74 @@ import { UserListTableComponent } from './components/dashboard/views/user-list/u
 import { DirectoryTemplateComponent } from './components/dashboard/views/directory/directory-template/directory-template.component';
 
 export const routes: Routes = [
-{
-        path : '',
-        component: HomePageComponent,
-        //pathMatch :'full'    
-},
+  {
+    path: '',
+    component: HomePageComponent,
+    //pathMatch :'full'
+  },
 
-{
+  {
     path: 'login',
-    component:ConnexionFormComponent
-},
-{
-    path:'register',
-    component:RegisterComponent,
-},
-{
-    path:'home',
-    component:HomePageComponent,
+    component: ConnexionFormComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'home',
+    component: HomePageComponent,
     //canActivate : [routesGuardGuard]
-},
-{
-    path:'dashboard',
-    component:DashboardComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'userList',
-    component:UserListComponent,
+  },
+  {
+    path: 'userList',
+    component: UserListComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'consultation',
-    component:ConsultationComponent,
+  },
+  {
+    path: 'consultation',
+    component: ConsultationComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'create/directory',
-    component:DirectoryComponent,
+  },
+  {
+    path: 'create/directory',
+    component: DirectoryComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'exams/manager',
-    component:ExamManagerComponent,
+  },
+  {
+    path: 'exams/manager',
+    component: ExamManagerComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'fees',
-    component:FeesComponent,
+  },
+  {
+    path: 'fees',
+    component: FeesComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'prescription',
-    component:PrescriptionComponent,
+  },
+  {
+    path: 'prescription',
+    component: PrescriptionComponent,
     //canActivate : [routesGuardGuard]
-},
-{  path:'table',
-    component:UserListTableComponent,
+  },
+  {
+    path: 'table',
+    component: UserListTableComponent,
     //canActivate : [routesGuardGuard]
-},
+  },
 
-{  path:'directory',
-    component:DirectoryTemplateComponent,
+  {
+    path: 'directory',
+    component: DirectoryTemplateComponent,
     //canActivate : [routesGuardGuard]
-},
+  },
 
-
-{
-    path :'**',
-    component:Page404Component
-}
-
-
+  {
+    path: '**',
+    component: Page404Component,
+  },
 ];
