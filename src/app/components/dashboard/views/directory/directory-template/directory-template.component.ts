@@ -19,7 +19,7 @@ export class DirectoryTemplateComponent {
     prenom: '',
     localisation: '',
     genre: '',
-    date_naissance: '',
+    date_naissance: null,
     lieu_naissance: '',
     profession: '',
     contact: '',
@@ -33,7 +33,7 @@ export class DirectoryTemplateComponent {
   constructor(private http: HttpClient) {}
 
   pushFormData() {
-    console.log(this.patient)
+    console.log(this.patient);
     this.http.post(this.API_URL, this.patient).subscribe({
       next: (res) => console.log('res:', res),
       error: (err) => console.log('erreur:', err),
