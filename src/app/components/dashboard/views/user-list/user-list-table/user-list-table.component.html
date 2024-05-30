@@ -159,7 +159,21 @@
       <td>
         <div style="display: flex; gap:0.5rem">
           <p-button icon="mdi mdi-phone-in-talk" [raised]="true" severity="success" class="p-mr-2" size="small" title="Contacter"></p-button>
-          <p-button icon="mdi mdi-dots-horizontal" [raised]="true" severity="secondary" class="p-mr-2"  size="small" title="Détail"></p-button>
+          <div class="card flex justify-content-center">
+            <p-button icon="mdi mdi-dots-horizontal" [raised]="true" severity="secondary" class="p-mr-2"  size="small" title="Détail" (click)="showDialog()" ></p-button>
+            <p-dialog 
+                header="Header" 
+                [(visible)]="visible" 
+                [modal]="true" 
+                [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+                [style]="{ width: '50vw' }" 
+                [draggable]="false" 
+                [resizable]="false">
+                    <p>
+                      Modal
+                    </p>
+            </p-dialog>
+        </div>
           <p-button icon="mdi mdi-delete" [raised]="true" severity="danger"  size="small" title="Supprimer" ></p-button>
         </div>
          

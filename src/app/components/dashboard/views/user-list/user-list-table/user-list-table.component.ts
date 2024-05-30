@@ -13,18 +13,24 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 
 
 
 @Component({
   selector: 'app-user-list-table',
   standalone: true,
-  imports: [TableModule,FormsModule, ButtonModule,TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule],
+  imports: [TableModule,FormsModule,DialogModule, ButtonModule,TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule],
   providers: [CustomerService],
   templateUrl: './user-list-table.component.html',
   styleUrl: './user-list-table.component.css'
 })
 export class UserListTableComponent implements OnInit {
+    visible: boolean = false;
+
+    showDialog() {
+        this.visible = true;
+    }
 deleteCustomer(arg0: any) {
 throw new Error('Method not implemented.');
 }
