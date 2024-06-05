@@ -1,4 +1,5 @@
 export interface Patient {
+  numero_dossier: number;
   nom: string;
   prenom: string;
   localisation: string;

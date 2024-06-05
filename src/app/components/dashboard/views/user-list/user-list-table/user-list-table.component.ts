@@ -7,7 +7,6 @@ import { TagModule } from 'primeng/tag';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import {
-  HttpClient,
   HttpClientModule,
   HttpErrorResponse,
   HttpResponse,
@@ -21,7 +20,6 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { Patient } from '../../../../../interface/patient.model';
 import { PatientService } from '../../../../../services/patient.service';
-
 
 @Component({
   selector: 'app-user-list-table',
@@ -38,31 +36,28 @@ import { PatientService } from '../../../../../services/patient.service';
     DropdownModule,
     CommonModule,
     HttpClientModule,
-    DialogModule
+    DialogModule,
   ],
 
-  providers: [CustomerService,PatientService],
+  providers: [CustomerService, PatientService],
   templateUrl: './user-list-table.component.html',
   styleUrl: './user-list-table.component.css',
 })
 export class UserListTableComponent implements OnInit {
+  visible: boolean = false;
 
-    visible: boolean = false;
-
-    showDialog() {
-        this.visible = true;
-    }
-deleteCustomer(arg0: any) {
-throw new Error('Method not implemented.');
-}
-viewDetails(arg0: any) {
-throw new Error('Method not implemented.');
-}
-contactCustomer(arg0: any) {
-throw new Error('Method not implemented.');
-}
-
-
+  showDialog() {
+    this.visible = true;
+  }
+  deleteCustomer(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
+  viewDetails(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
+  contactCustomer(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
 
   customers!: Customer[];
   patients!: Patient[];
@@ -75,30 +70,31 @@ throw new Error('Method not implemented.');
   loading: boolean = true;
 
   activityValues: number[] = [0, 100];
-  // private customerService = inject(CustomerService);
-  // private patientService = inject(PatientService);
 
-  private patientService = inject(PatientService)
-  
+  private patientService = inject(PatientService);
+
   ngOnInit() {
-    this.patientService.getPatientsList().subscribe({
-      next: (patients: any) => {
-        this.patients = patients;
-        this.loading = false;
-
-        this.patients.forEach(
-          (patient) =>
-            (patient.date_naissance = new Date(<Date>patient.date_naissance))
-        );
-      },
-
-      error: (err: HttpResponse<HttpErrorResponse>) => {
-        console.error('Oups! ', err);
-      },
-
-      complete: () => {},
-    });
-
+    setTimeout(()=>{
+      this.patientService.getPatientsList().subscribe({
+        next: (patients: any) => {
+          this.patients = patients;
+          this.loading = false;
+  
+          this.patients.forEach(
+            (patient) =>
+              (patient.date_naissance = new Date(<Date>patient.date_naissance))
+          );
+        },
+  
+        error: (err: HttpResponse<HttpErrorResponse>) => {
+          console.error('Oups! ', err);
+        },
+  
+        complete: () => {},
+      });
+  
+    },1000)
+    
     this.representatives = [
       { name: 'Kone emmanuel', image: 'amyelsner.png' },
       { name: 'Dosso Aboubakar', image: 'annafali.png' },

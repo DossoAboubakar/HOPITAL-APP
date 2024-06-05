@@ -15,6 +15,7 @@ export class DirectoryTemplateComponent {
   listPatient: Array<Patient> = [];
 
   patient: Patient = {
+    numero_dossier : 0,
     nom: '',
     prenom: '',
     localisation: '',
@@ -28,7 +29,7 @@ export class DirectoryTemplateComponent {
     antecedents: '',
   };
 
-  API_URL = 'http://192.168.1.108:8000/api/dossier-patient';
+  API_URL = 'http://192.168.1.104:8000/api/dossier-patient';
 
   constructor(private http: HttpClient) {}
 
